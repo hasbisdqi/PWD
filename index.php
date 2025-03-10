@@ -1,3 +1,6 @@
+<?php
+ include 'router.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +26,14 @@
         {
             echo '<ul class="pl-4 border-l border-gray-300">';
             $files = scandir($dir);
+            usort($files, function ($a, $b) use ($dir) {
+                $aIsDir = is_dir($dir . '/' . $a);
+                $bIsDir = is_dir($dir . '/' . $b);
+                if ($aIsDir === $bIsDir) {
+                    return strcasecmp($a, $b);
+                }
+                return $aIsDir ? -1 : 1;
+            });
             foreach ($files as $file) {
                 if ($file != '.' && $file != '..') {
                     $filePath = $dir . '/' . $file;

@@ -1,0 +1,67 @@
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+}
+
+.dot-pattern {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: white;
+    background-image: radial-gradient(#c5c7cb 1px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(
+        ellipse 70% 70% at 0% 0%,
+        #000 20%,
+        transparent 100%
+    );
+    mask-image: radial-gradient(
+        ellipse 70% 70% at 0% 0%,
+        #000 20%,
+        transparent 100%
+    );
+}
+
+.testimonial-card {
+    break-inside: avoid;
+    margin-bottom: 0.25rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+    animation: shake 0.5s ease-in-out;
+    z-index: 100;
+}
+
+.testimonial-card:hover .card{
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card:nth-child(odd):hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.testimonial-card:nth-child(even):hover {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+
+section {
+    scroll-margin-top: 2rem;
+}
+
+.pricing-card {
+    transition: all 0.3s;
+}
+
+.pricing-card:hover {
+    transform: scale(1.1);
+}
+
+.pricing-card:hover .card{
+    border: var(--bs-primary) 2px solid !important;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}

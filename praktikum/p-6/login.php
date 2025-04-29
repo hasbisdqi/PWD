@@ -7,8 +7,13 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form action="">
+    <form action="ceklogin.php" method="POST">
         <table>
+            <tr>
+                <td colspan="2" style="color: red;">
+                    <?=$_GET['pesan'] ?>
+                </td>
+            </tr>
             <tr>
                 <td>username</td>
                 <td><input type="text" name="username"></td>
